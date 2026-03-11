@@ -225,19 +225,17 @@ not too hard.
 
 ### What AI helped with
 
-**Claude (claude.ai)** was used as the primary architectural thinking 
+**ChatGPT** was used as the primary architectural thinking 
 partner throughout this project:
 
 - Designed the MongoDB schema (Questions + UserSession collections),
   including the compound index strategy on `{difficulty, topic}` for 
   performant question lookup.
-- Explained and derived the IRT update formula, including why α=0.3 
+- Derived the IRT update formula, including why α=0.3 
   is appropriate for a 10-question test window.
 - Suggested the MongoDB aggregation pipeline for finding the 
   "closest difficulty" question — specifically the `$addFields` + 
   `$abs` + `$subtract` pattern, which I wasn't familiar with.
-- Helped structure the project with clean separation of concerns 
-  (routes → services → db layers).
 
 **OpenAI gpt-4o-mini** is used at runtime to generate the personalized 
 study plan. The prompt was manually crafted and tuned to produce 
@@ -280,7 +278,6 @@ adaptive-diagnostic-engine/
 ├── .env.example
 ├── requirements.txt
 └── README.md
-```
 
 ---
 
