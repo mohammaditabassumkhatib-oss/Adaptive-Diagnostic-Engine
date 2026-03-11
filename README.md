@@ -287,7 +287,7 @@ adaptive-diagnostic-engine/
 ![Submit Answer Output](submit_answer.png)
 
 ### Study Plan Output
-![Submit Answer Output](study_plan.png)
+![Study Plan Output](study_plan.png)
 
 At the end of a 10-question session, the system produces:
 
