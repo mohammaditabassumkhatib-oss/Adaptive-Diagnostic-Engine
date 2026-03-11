@@ -276,11 +276,17 @@ adaptive-diagnostic-engine/
 │   └── models/schemas.py       # Pydantic request/response models
 ├── .env.example
 ├── requirements.txt
-└── README.md
+└── README.md                   # ← images reference ./screenshots/...
 
 ---
 
-## Sample Output
+## Example Output
+
+### Submit Answer Response
+![Submit Answer Output](screenshots/submit_answer.png)
+
+### Study Plan Output
+![Study Plan Output](screenshots/study_plan.png)
 
 At the end of a 10-question session, the system produces:
 
