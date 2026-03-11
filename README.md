@@ -279,6 +279,8 @@ adaptive-diagnostic-engine/
 ├── README.md                   
 ├── study_plan.png              # images reference (output)
 └── submit_answer.png           # images reference (output)
+```
+
 ---
 
 ## Sample Output
