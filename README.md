@@ -281,31 +281,28 @@ adaptive-diagnostic-engine/
 └── submit_answer.png           # images reference (output)
 ---
 
-## Example Output
+## Sample Output
 
-### Submit Answer Response
-![Submit Answer Output](submit_answer.png)
+### Submit Answer — Final Question (`POST /submit-answer`)
 
-### Study Plan Output
-![Study Plan Output](study_plan.png)
+When the 10th question is answered, the response includes the full session
+summary alongside the answer feedback:
 
-At the end of a 10-question session, the system produces:
+![Submit Answer Response](submit_answer.png)
 
-```json
-{
-  "summary": {
-    "total_questions": 10,
-    "total_correct": 7,
-    "final_ability_score": 0.9021,
-    "topics_struggled": ["Vocabulary"],
-    "topics_strong": ["Algebra", "Statistics", "Geometry", "Arithmetic"],
-    "peak_difficulty_reached": 0.95
-  },
-  "study_plan": "Step 1: ... Step 2: ... Step 3: ..."
-}
-```
+The system correctly identified **Algebra** and **Vocabulary** as weak areas
+despite the student reaching a peak difficulty of **0.95** — showing that
+topic-level accuracy matters more than raw difficulty reached.
 
-> The system correctly identified Vocabulary as the weak area and 
-> generated a targeted study plan despite the student scoring 70% overall 
-> — demonstrating that topic-level granularity matters more than 
-> raw score for personalized learning.
+---
+
+### AI Study Plan — (`GET /study-plan`)
+
+Once the session completes, the summary is sent to GPT-4o-mini which returns
+a personalized 3-step learning plan targeting the student's specific weak topics:
+
+![Study Plan Response](study_plan.png)
+
+> Notice the study plan specifically addresses Algebra fundamentals and 
+> Vocabulary — not generic GRE advice — because the prompt includes 
+> `topics_struggled` from the session summary.
