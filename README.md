@@ -225,8 +225,7 @@ not too hard.
 
 ### What AI helped with
 
-**ChatGPT** was used as the primary architectural thinking 
-partner throughout this project:
+**ChatGPT** was used as the primary partner throughout this project:
 
 - Designed the MongoDB schema (Questions + UserSession collections),
   including the compound index strategy on `{difficulty, topic}` for 
@@ -235,7 +234,7 @@ partner throughout this project:
   is appropriate for a 10-question test window.
 - Suggested the MongoDB aggregation pipeline for finding the 
   "closest difficulty" question — specifically the `$addFields` + 
-  `$abs` + `$subtract` pattern, which I wasn't familiar with.
+  `$abs` + `$subtract` pattern.
 
 **OpenAI gpt-4o-mini** is used at runtime to generate the personalized 
 study plan. The prompt was manually crafted and tuned to produce 
